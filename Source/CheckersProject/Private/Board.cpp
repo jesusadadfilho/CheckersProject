@@ -47,11 +47,6 @@ void ABoard::SetupBoard()
 		Squares.Add(line);
 	}
 
-	for(ASquare* s : Squares[0])
-	{
-		if (GEngine)
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, FString::Printf(TEXT("Squares size %d"), s->SquareData.Column));
-	}
 }
 
 TArray<ASquare*> ABoard::GetPossibleMoves(ASquare* Square)
