@@ -28,8 +28,9 @@ void ABoard::Tick(float DeltaTime)
 void ABoard::SetupBoard()
 {
 	Squares = TArray<TArray<ASquare*>>();
-	
-	for(int32 i = 0; i < BoardSquare; i++)
+
+
+	for (int32 i = 0; i < BoardSquare; i++)
 	{
 		TArray<ASquare*> line;
 		for(int32 j = 0; j < BoardSquare; j++)
@@ -46,6 +47,7 @@ void ABoard::SetupBoard()
 		}
 		Squares.Add(line);
 	}
+	
 
 }
 

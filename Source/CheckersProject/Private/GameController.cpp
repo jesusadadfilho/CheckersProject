@@ -35,10 +35,7 @@ void AGameController::FillWhiteCheckers()
 		{
 			if ((i + j) % 2 == 0)
 			{
-				AChecker* newChecker = GetWorld()->SpawnActor<AChecker>(AChecker::StaticClass(), FVector(0, 0, 0), FRotator(0, 0, 0));
-				newChecker->SetActorLocation(FVector(i * 100, j * 100, 55));
-				newChecker->SetupCheckerMaterial(false);
-				WhiteCheckers.Add(newChecker);
+				CreateChecker(i, j, false);
 			}
 		}
 	}
@@ -52,12 +49,15 @@ void AGameController::FillBRownCheckers()
 		{
 			if ((i + j) % 2 == 0)
 			{
-				AChecker* newChecker = GetWorld()->SpawnActor<AChecker>(AChecker::StaticClass(), FVector(0, 0, 0), FRotator(0, 0, 0));
-				newChecker->SetActorLocation(FVector(i * 100, j * 100, 55));
-				newChecker->SetupCheckerMaterial(true);
-				BrownCheckers.Add(newChecker);
+				CreateChecker(i, j, true);
 			}
 		}
 	}
+}
+
+void AGameController::CreateChecker(int i, int j, bool bIsBrown)
+{
+	AChecker* checker = GetWorld()->SpawnActor<AChecker>(AChecker::StaticClass(), FVector(i * 100, j * 100, 70), FRotator(0, 0, 0));
+	checker->SetupCheckerMaterial(bIsBrown);
 }
 

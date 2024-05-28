@@ -39,4 +39,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Board")
 	void FillBRownCheckers();
+
+
+	void CreateChecker(int i, int j, bool bIsBrown);
 };

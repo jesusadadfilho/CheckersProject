@@ -3,11 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Pawn.h"
 #include "Checker.generated.h"
 
 UCLASS()
-class CHECKERSPROJECT_API AChecker : public AActor
+class CHECKERSPROJECT_API AChecker : public APawn
 {
 	GENERATED_BODY()
 	
